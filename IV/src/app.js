@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route} from 'react-router';
-import Pizza from './Pizza/Pizza'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Pizza from './Pizza/Pizza';
+import NavigationBar from './Navigation/NavigationBar';
 
 class App extends React.Component {
     constructor(props) {
@@ -11,10 +12,13 @@ class App extends React.Component {
     render() {
         return (
             <div>
-            hello mafakka
+                <NavigationBar/>
+                <Switch>
+                    <Route path="/Pizza" component={Pizza} />
+                </Switch>
             </div>
         );
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Router><App /></Router>, document.getElementById('app'));

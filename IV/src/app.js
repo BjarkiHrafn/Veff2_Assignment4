@@ -26,7 +26,7 @@ class App extends React.Component {
                 <div className="container">
                     <Switch>
                         <Route path="/pizza/:pizzaId" component={PizzaDetails} />
-                        <Route exact path="/menu" component={Menu} />
+                        <Route exact path="/pizza" component={Menu} />
                         <Route path="/About" component={About} />
                         <Route path="/Offers" component={Offers} />
                     </Switch>

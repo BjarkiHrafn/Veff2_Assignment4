@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Pizza from './Component/Pizza/Pizza';
+import PizzaDetails from './Component/Pizza/PizzaDetails.js';
 import NavigationBar from './Component/NavigationBar/NavigationBar';
 import{Provider} from 'react-redux';
 import{createStore, applyMiddleware} from 'redux';
@@ -23,9 +24,9 @@ class App extends React.Component {
             <div>
                 <NavigationBar logoImageUrl="http://2.bp.blogspot.com/-6RJZ2t7J2RA/UZwZEyjgDVI/AAAAAAAAGBs/jBc6F3BGVH0/s1600/Cartoon%2BPizza%2BWallpaper-730880.jpg"/>
                 <div className="container">
-                <Menu/>
                     <Switch>
-                        <Route path="/Pizza" component={Pizza} />
+                        <Route path="/pizza/:pizzaId" component={PizzaDetails} />
+                        <Route exact path="/menu" component={Menu} />
                         <Route path="/About" component={About} />
                         <Route path="/Offers" component={Offers} />
                     </Switch>

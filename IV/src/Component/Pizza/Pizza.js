@@ -16,7 +16,7 @@ const Pizza = ({pizza}) => {
 };
 
 Pizza.propTypes = {
-    pizza: PropTypes.shape({
+    pizza: PropTypes.shape({ // ekki þessi
         name: PropTypes.string,
         description: PropTypes.string,
         price: PropTypes.number,

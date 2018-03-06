@@ -6,19 +6,13 @@ import NavigationBarLinkWrapper from '../NavigationBarLinkWrapper/NavigationBarL
 
 const Pizza = ({pizza}) => {
 
-    const details = () => {
-        var path = 'pizza(/' + pizza.id.toString();
-
-        console.log(pizza.id);
-    };
-
-    const{name, description, price, image} = pizza;
+    const{id, name, description, price, image} = pizza;
     return(
 
-        <div className= "pizza-wrapper" onClick = {details}>
+        <div className= "pizza-wrapper">
+        <NavigationBarLinkWrapper>
             <NavLink
-                exact
-                to="/pizza/:pizza.id"
+                to={"/pizza/" + id}
                 activeClassName="active"
                 className="nav-link">
                 <div className = "pizza-image">
@@ -28,12 +22,18 @@ const Pizza = ({pizza}) => {
                 <div className = "pizza-description">{description}</div>
                 <div className = "pizza-price">{price}</div>
             </NavLink>
+        </NavigationBarLinkWrapper>
         </div>
     );
 };
 
 Pizza.propTypes = {
+<<<<<<< HEAD
     pizza: PropTypes.shape({ // ekki þessi
+=======
+    pizza: PropTypes.shape({
+        id: PropTypes.number,
+>>>>>>> 5b444ad21d6319babea3c7e00c78b31ae613eede
         name: PropTypes.string,
         description: PropTypes.string,
         price: PropTypes.number,

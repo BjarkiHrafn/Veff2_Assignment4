@@ -1,5 +1,4 @@
 import { GET_ALL_OFFERS } from '../Constants/offersConstants';
-
 import fetch from 'isomorphic-fetch';
 
 export const getAllOffers = () => {

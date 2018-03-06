@@ -9,7 +9,7 @@ class PizzaDetails extends React.Component {
         this.state = {renderIt: false};
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const {getAllPizzas} = this.props;
         getAllPizzas();
         this.setState({renderIt: true});
@@ -17,28 +17,19 @@ class PizzaDetails extends React.Component {
 
     render() {
         const pizza = this.props.pizzas.filter(p => p.id == this.props.match.params.pizzaId);
-        console.log(pizza);
+        
             return (
                 <div className= "pizza-wrapper">
                     <div className = "pizza-image">
-                        <img src = {pizza.image} alt = "" />
+                        <img src = {pizza[0].image} alt = "" />
                     </div>
-                    <div className = "pizza-name">{pizza.name}</div>
-                    <div className = "pizza-description">{pizza.description}</div>
-                    <div className = "pizza-price">{pizza.price}</div>
+                    <div className = "pizza-name">{pizza[0].name}</div>
+                    <div className = "pizza-description">{pizza[0].description}</div>
+                    <div className = "pizza-price">{pizza[0].price}</div>
                 </div>
             );
     }
 }
-
-PizzaDetails.propTypes = {
-    pizza: PropTypes.shape({
-        name: PropTypes.string,
-        description: PropTypes.string,
-        price: PropTypes.number,
-        image: PropTypes.string
-    })
-};
 
 const mapStateToProps = (storeState) => {
     return {

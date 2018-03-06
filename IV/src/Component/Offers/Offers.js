@@ -7,15 +7,17 @@ import { getAllOffers } from '../../Actions/offerActions';
 class Offers extends React.Component {
     componentDidMount() {
         console.log("component did mount");
-        console.log( {getAllOffers} );
+        //console.log( {getAllOffers} );
         const { getAllOffers } = this.props;
         getAllOffers();
     }
     render() {
         const { offer } = this.props;
+        console.log(offer);
+
         return (
             <div className="container">
-                {offer.map(o => <Offer key={o.id} offer={o} />)}
+                {offer.map(o => <Offer key={o.id} theOffer={o} />)}
             </div>
         );
     }

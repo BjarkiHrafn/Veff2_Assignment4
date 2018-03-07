@@ -11,6 +11,7 @@ import Reducers from './Reducers/reducers';
 import Menu from './Component/Menu/Menu';
 import About from './Component/About/About';
 import Offers from './Component/Offers/Offers';
+import Cart from './Component/Cart/Cart';
 import '../styles/site.less';
 //import '../site.css';
 
@@ -23,6 +24,7 @@ class App extends React.Component {
         return (
             <div>
                 <NavigationBar logoImageUrl="http://2.bp.blogspot.com/-6RJZ2t7J2RA/UZwZEyjgDVI/AAAAAAAAGBs/jBc6F3BGVH0/s1600/Cartoon%2BPizza%2BWallpaper-730880.jpg"/>
+                <Cart />
                 <div className="container">
                     <Switch>
                         <Route path="/pizza/:pizzaId" component={PizzaDetails} />

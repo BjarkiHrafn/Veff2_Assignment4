@@ -37,6 +37,7 @@
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-cookie": "^2.1.4",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.7",
@@ -44,6 +45,7 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "set-default-browser": "^1.0.1"
+    "set-default-browser": "^1.0.1",
+    "universal-cookie": "^2.1.2"
   }
 }

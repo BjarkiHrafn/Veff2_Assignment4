@@ -11,8 +11,13 @@ import Reducers from './Reducers/reducers';
 import Menu from './Component/Menu/Menu';
 import About from './Component/About/About';
 import Offers from './Component/Offers/Offers';
+import Offer from './Component/Offer/Offer';
+import Delivery from './Component/Delivery/Delivery';
+import Pickup from './Component/Pickup/Pickup';
+import Confirmation from './Component/Confirmation/Confirmation';
 import Cart from './Component/Cart/Cart';
 import '../styles/site.less';
+
 //import '../site.css';
 
 class App extends React.Component {
@@ -31,7 +36,11 @@ class App extends React.Component {
                         <Route exact path="/pizza" component={Menu} />
                         <Route path="/About" component={About} />
                         <Route path="/Offers" component={Offers} />
+                        //<Delivery />
+                        //<Pickup />
                     </Switch>
+                    <Confirmation />
+
                 </div>
             </div>
         );

@@ -8,7 +8,6 @@ const Pizza = ({pizza}) => {
 
     const{id, name, description, price, image} = pizza;
     return(
-
         <div className= "pizza-wrapper">
         <NavigationBarLinkWrapper>
             <NavLink

@@ -57,7 +57,7 @@ class Delivery extends React.Component {
                         name="telephone"
                         value={telephone}
                         type="tel"
-                        validate={val => !val ? 'telephone code is required' : ''} />
+                        validate={val => !val ? 'telephone number is required' : ''} />
                     <TextInput
                         onChange={e => this.onInput(e)}
                         name="postalCode"

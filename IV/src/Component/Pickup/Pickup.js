@@ -45,7 +45,7 @@ class Pickup extends React.Component {
                         name="telephone"
                         value={telephone}
                         type="tel"
-                        validate={val => !val ? 'telephone code is required' : ''} />
+                        validate={val => !val ? 'telephone number is required' : ''} />
                     <button type="submit" className="btn">submit</button>
                 </form>
             </div>

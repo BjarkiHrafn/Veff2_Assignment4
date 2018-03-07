@@ -8,7 +8,6 @@ const Pizza = ({pizza}) => {
 
     const{id, name, description, price, image} = pizza;
     return(
-
         <div className= "pizza-wrapper">
         <NavigationBarLinkWrapper>
             <NavLink
@@ -28,12 +27,8 @@ const Pizza = ({pizza}) => {
 };
 
 Pizza.propTypes = {
-<<<<<<< HEAD
-    pizza: PropTypes.shape({ // ekki þessi
-=======
     pizza: PropTypes.shape({
         id: PropTypes.number,
->>>>>>> 5b444ad21d6319babea3c7e00c78b31ae613eede
         name: PropTypes.string,
         description: PropTypes.string,
         price: PropTypes.number,

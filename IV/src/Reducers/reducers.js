@@ -5,4 +5,5 @@ import offer from './offersReducer';
 
 export default combineReducers({
     pizza, order, offer
+    
 });

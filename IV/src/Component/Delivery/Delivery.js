@@ -44,6 +44,7 @@ class Delivery extends React.Component {
     }
     render() {
         const { name, address, city, telephone, postalCode} = this.state.fields;
+        const re = new RegExp("^([a-z0-9]{7,})$");
         return (
             <div>
                 <h1>Information</h1>
@@ -68,7 +69,7 @@ class Delivery extends React.Component {
                         name="telephone"
                         value={telephone}
                         type="tel"
-                        validate={val => !val ? 'telephone number is required' : ''} />
+                        validate={val => !re.test(val) ? 'telephone number is required' : ''} />
                     <TextInput
                         onChange={e => this.onInput(e)}
                         name="postalCode"

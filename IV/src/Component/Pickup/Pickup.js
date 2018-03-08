@@ -41,6 +41,7 @@ class Pickup extends React.Component {
     }
     render() {
         const { name, telephone } = this.state.fields;
+        const re = new RegExp("^([a-z0-9]{7,})$");
         return (
             <div>
                 <h1>Information</h1>
@@ -55,7 +56,7 @@ class Pickup extends React.Component {
                         name="telephone"
                         value={telephone}
                         type="tel"
-                        validate={val => !val ? 'telephone number is required' : ''} />
+                        validate={val => !re.test(val) ? 'telephone number is required' : ''} />
                     <button type="submit" className="btn">next</button>
                 </form>
             </div>

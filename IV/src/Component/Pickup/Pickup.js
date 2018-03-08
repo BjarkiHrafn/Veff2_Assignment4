@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from '../TextInput/TextInput';
 import { connect } from 'react-redux';
+import Overview from '../Overview/Overview';
 
 const initialState = {
     fields: {
@@ -24,10 +25,8 @@ class Pickup extends React.Component {
         console.log("submit pleas");
         const {  name, telephone } = this.state.fields;
         if (name === '' || telephone === '') { return false; }
-
         // TODO: add information to database
-
-        this.setState(initialState);
+        this.props.history.push('/checkout/overview');
     }
     render() {
         const { name, telephone } = this.state.fields;
@@ -46,7 +45,7 @@ class Pickup extends React.Component {
                         value={telephone}
                         type="tel"
                         validate={val => !val ? 'telephone number is required' : ''} />
-                    <button type="submit" className="btn">submit</button>
+                    <button type="submit" className="btn">next</button>
                 </form>
             </div>
         )

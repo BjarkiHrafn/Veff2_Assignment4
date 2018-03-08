@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes} from 'prop-types';
 import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
-
+import { NavLink } from 'react-router-dom';
 
 const Cart = ({cart}) =>{
 

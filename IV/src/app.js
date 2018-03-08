@@ -16,7 +16,10 @@ import Delivery from './Component/Delivery/Delivery';
 import Pickup from './Component/Pickup/Pickup';
 import Confirmation from './Component/Confirmation/Confirmation';
 import Cart from './Component/Cart/Cart';
+import CartInfo from './Component/CartInfo/CartInfo';
 import '../styles/site.less';
+import Checkout from './Component/Checkout/Checkout';
+import MainPageCart from './Component/MainPageCart/MainPageCart';
 
 //import '../site.css';
 
@@ -29,19 +32,19 @@ class App extends React.Component {
         return (
             <div>
                 <NavigationBar logoImageUrl="http://2.bp.blogspot.com/-6RJZ2t7J2RA/UZwZEyjgDVI/AAAAAAAAGBs/jBc6F3BGVH0/s1600/Cartoon%2BPizza%2BWallpaper-730880.jpg"/>
-                <Cart />
+                <MainPageCart />
                 <div className="container">
                     <Switch>
                         <Route path="/pizza/:pizzaId" component={PizzaDetails} />
                         <Route exact path="/pizza" component={Menu} />
                         <Route path="/About" component={About} />
                         <Route path="/Offers" component={Offers} />
-                        //<Delivery />
-                        //<Pickup />
+                        <Route path="/Cart" component={CartInfo} />
+                        <Route path="/Checkout" component={Checkout} />
+                        <Route parth="/Confirmation" component={Confirmation} />
                     </Switch>
-                    <Confirmation />
-
                 </div>
+
             </div>
         );
     }

@@ -29,6 +29,8 @@ class Delivery extends React.Component {
 
         // TODO: add information to database
 
+        this.props.history.push('/checkout/overview');
+
         this.setState(initialState);
     }
     render() {
@@ -63,7 +65,7 @@ class Delivery extends React.Component {
                         name="postalCode"
                         value={postalCode}
                         validate={val => !(val<1000 && val>99) ? 'postal code is not fromated correctly' : ''} />
-                    <button type="submit" className="btn">submit</button>
+                    <button type="submit" className="btn">next</button>
                 </form>
             </div>
         )

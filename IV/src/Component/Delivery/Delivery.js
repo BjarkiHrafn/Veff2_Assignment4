@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from '../TextInput/TextInput';
 import { connect } from 'react-redux';
+import Cookies from 'universal-cookie';
 
 const initialState = {
     fields: {
@@ -26,7 +27,11 @@ class Delivery extends React.Component {
         e.preventDefault();
         const {  name, address, city, telephone, postalCode } = this.state.fields;
         if (name === '' || address === '' || city === '' || telephone === '' || postalCode === '') { return false; }
-
+        else{
+            const cookies = new Cookies();
+            cookies.set('user', {name, address, city, telephone, postalCode});
+            console.log('user info: ', cookies.get('user'));
+        }
         // TODO: add information to database
 
         this.props.history.push('/checkout/overview');

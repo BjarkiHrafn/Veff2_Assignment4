@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from '../TextInput/TextInput';
 import { connect } from 'react-redux';
+import { getUserInfo } from '../../Actions/userActions';
 
 const initialState = {
     fields: {
@@ -28,10 +29,13 @@ class Delivery extends React.Component {
         if (name === '' || address === '' || city === '' || telephone === '' || postalCode === '') { return false; }
 
         // TODO: add information to database
+        const { getUserInfo } = this.props;
+        getUserInfo(telephone);
 
+        //this.setState(initialState);
         this.props.history.push('/checkout/overview');
 
-        this.setState(initialState);
+
     }
     render() {
         const { name, address, city, telephone, postalCode} = this.state.fields;
@@ -72,4 +76,8 @@ class Delivery extends React.Component {
     };
 };
 
-export default Delivery;
+const mapStateToProps = ({user})  => {
+    return { user }
+}
+
+export default connect(mapStateToProps, { getUserInfo })(Delivery);

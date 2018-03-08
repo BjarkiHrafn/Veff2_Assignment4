@@ -9,7 +9,7 @@ const Confirmation = ({cart, user}) => {
     var cartItems = cart.arr;
     var userInfo = user;
     console.log(cartItems);
-    console.log('user', userInfo);
+    console.log('user', user);
     const phone = '5812345';
 
     var orderInfo = [];
@@ -45,6 +45,6 @@ const mapStateToProps = ({cart, user}) => {
     return{ cart, user }
 }
 
-export default connect(mapStateToProps, {})(Confirmation);
+export default connect(mapStateToProps, {submitOrder})(Confirmation);
 
 //export default Confirmation;

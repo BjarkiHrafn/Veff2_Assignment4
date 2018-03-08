@@ -6,46 +6,50 @@ import Cookies from 'universal-cookie';
 
 const Cart = ({cart}) =>{
 
-        const cartItems = cart.arr;
-        let cartView;
-        let name = [];
-        let id = []
+    const cookies = new Cookies();
+    const cartItems = cart.arr;
+    const cookie = new Cookies();
+    var newCart = [];
+    var names = [];
+    let total = 0;
+    if(cookies.get('cart') === undefined){
+        cookie.set('cart', JSON.stringify([]));
+    } else {
+        newCart = cookie.get('cart');
+        const addToCart = (pizza) => {
 
-        const cookies = new Cookies();
+            newCart.push(pizza);
+            cookie.set('cart', JSON.stringify(newCart));
+        };
+        if(cart.arr.length > 0 ){
+            addToCart(cartItems);
 
-
-
-        if(cartItems.length > 0) {
-            console.log("cartItems: ", cartItems[0][0].id);
-            let total = 0;
-
-            for(let i = 0; i < cartItems.length; i++) {
-                total += cartItems[i][0].price;
-                name.push(cartItems[i][0].name);
-                id.push(cartItems[i][0].id);
-
-            }
-            cookies.set('pizza', cartItems, { path: '/' });
-
-            return(
-                <div className = "cartContainer">
-                    <h3>Cart</h3>
-                    <p>{name}</p>
-                    <p>{total}</p>
-                </div>
-            );
-
-
-        } else {
-            return(
-                <div className = "cartContainer">
-                    <h3>Cart</h3>
-                </div>
-            );
         }
+    }
 
-    //
+    if(newCart.length > 0){
 
+        for(let i = 0; i < newCart.length; i++) {
+            total += newCart[i][0][0].price;
+            names.push(newCart[i][0][0].name);
+        }
+        return(
+
+            <div className = "cartContainer">
+                <h3>Cart</h3>
+                    {names}
+                    <br/>
+                    {total}
+                <br/>
+            </div>
+        );
+    } else {
+        return(
+            <div className = "cartContainer">
+
+            </div>
+        );
+    };
 
 }
 

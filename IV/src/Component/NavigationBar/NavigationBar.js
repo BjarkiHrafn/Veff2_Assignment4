@@ -11,7 +11,7 @@ const NavigationBar = ({ logoImageUrl}) => {
             </div>
             <NavigationBarLinkWrapper>
                 <NavLink
-                    exact
+                    
                     to="/pizza"
                     activeClassName="active"
                     className="nav-link">Pizza</NavLink>
@@ -23,6 +23,10 @@ const NavigationBar = ({ logoImageUrl}) => {
                     to="/about"
                     activeClassName="active"
                     className="nav-link">About</NavLink>
+                <NavLink
+                    to="/cart"
+                    activeClassName="active"
+                    className="nav-link">Cart</NavLink>
             </NavigationBarLinkWrapper>
         </nav>
     );

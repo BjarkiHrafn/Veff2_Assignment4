@@ -26,9 +26,9 @@ class Checkout extends React.Component {
                     className="deliver-or-pickup">Pickup</NavLink>
                 <div>
                     <Switch>
-                        <Route path="/checkout/delivery" component={Delivery} />
-                        <Route path="/checkout/pickup" component={Pickup} />
-                        <Route path="/checkout/overview" component={Overview}/>
+                        <Route exact path="/checkout/delivery" component={Delivery} />
+                        <Route exact path="/checkout/pickup" component={Pickup} />
+                        <Route exact path="/checkout/overview" component={Overview}/>
                     </Switch>
                 </div>
             </div>

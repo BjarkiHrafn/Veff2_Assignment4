@@ -21,6 +21,7 @@ class Menu extends React.Component {
 
     render(){
         const{pizza} = this.props;
+        console.log("pizza: ", pizza);
 
         return(
             <div className = "container">

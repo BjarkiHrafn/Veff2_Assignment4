@@ -14,6 +14,7 @@ class Overview extends React.Component {
                 <h1>Overview</h1>
                 <Cart />
                 <NavLink
+                    exact
                     to="/confirmation"
                     activeClassName="active"
                     className="confirmation-nav-link">Confirm!</NavLink>

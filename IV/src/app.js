@@ -35,13 +35,14 @@ class App extends React.Component {
                 <MainPageCart />
                 <div className="container">
                     <Switch>
-                        <Route path="/pizza/:pizzaId" component={PizzaDetails} />
+                        <Route exact path="/" component={About} />
+                        <Route exact path="/pizza/:pizzaId" component={PizzaDetails} />
                         <Route exact path="/pizza" component={Menu} />
-                        <Route path="/About" component={About} />
-                        <Route path="/Offers" component={Offers} />
-                        <Route path="/Cart" component={CartInfo} />
-                        <Route path="/Checkout" component={Checkout} />
-                        <Route parth="/Confirmation" component={Confirmation} />
+                        <Route exact path="/About" component={About} />
+                        <Route exact path="/Offers" component={Offers} />
+                        <Route exact path="/Cart" component={CartInfo} />
+                        <Route exact path="/Checkout" component={Checkout} />
+                        <Route exact parth="/confirmation" component={Confirmation} />
                     </Switch>
                 </div>
 

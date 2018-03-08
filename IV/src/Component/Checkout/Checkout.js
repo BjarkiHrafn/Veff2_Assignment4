@@ -20,6 +20,7 @@ class Checkout extends React.Component {
                     activeClassName="active"
                     className="deliver-or-pickup">Delivery</NavLink>
                 <NavLink
+                    exact
                     to="/checkout/pickup"
                     activeClassName="active"
                     className="deliver-or-pickup">Pickup</NavLink>

@@ -11,7 +11,7 @@ const NavigationBar = ({ logoImageUrl}) => {
             </div>
             <NavigationBarLinkWrapper>
                 <NavLink
-                    exact
+                    
                     to="/pizza"
                     activeClassName="active"
                     className="nav-link">Pizza</NavLink>

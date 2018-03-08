@@ -8,20 +8,15 @@ import { getAllPizzas} from '../../Actions/pizzaActions';
 class Menu extends React.Component {
     constructor(props) {
         super(props);
-        this.details = this.details.bind(this);
+        
     }
     componentDidMount() {
         const {getAllPizzas} = this.props;
         getAllPizzas();
     }
 
-    details() {
-        console.log("bull");
-    }
-
     render(){
         const{pizza} = this.props;
-        console.log("pizza: ", pizza);
 
         return(
             <div className = "container">

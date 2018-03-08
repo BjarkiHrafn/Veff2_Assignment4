@@ -34,7 +34,7 @@ class Pickup extends React.Component {
             console.log('user info from pickup: ', cookies.get('user'));
         }
         // TODO: add information to database
-
+        const{getUserInfo} = this.props;
         getUserInfo(telephone);
 
         this.props.history.push('/checkout/overview');

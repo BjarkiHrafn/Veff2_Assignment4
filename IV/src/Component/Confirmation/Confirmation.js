@@ -7,10 +7,9 @@ import { submitOrder } from '../../Actions/orderAction';
 const Confirmation = ({cart, user}) => {
 
     var cartItems = cart.arr;
-    var userInfo = user;
-    console.log(cartItems);
-    console.log('user', user);
-    const phone = '5812345';
+    //var userInfo = user;
+
+    const phone = user;
 
     var orderInfo = [];
     orderInfo.push(phone);
@@ -19,7 +18,7 @@ const Confirmation = ({cart, user}) => {
         for(var i = 0; i < cartItems.length; i++) {
             orderInfo.push(cartItems[0][i]);
         }
-        console.log(orderInfo);
+        console.log("orderInfo: ", orderInfo);
 
         //const { submitOrder } = orderInfo;
         submitOrder(orderInfo);
@@ -37,7 +36,7 @@ Confirmation.propTypes = {
     cart: PropTypes.shape({
     arr: PropTypes.array
     }),
-    user: PropTypes.any
+    user: PropTypes.string
 };
 
 

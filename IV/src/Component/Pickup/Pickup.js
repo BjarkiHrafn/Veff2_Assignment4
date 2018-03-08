@@ -3,6 +3,8 @@ import TextInput from '../TextInput/TextInput';
 import { connect } from 'react-redux';
 import Overview from '../Overview/Overview';
 import { getUserInfo } from '../../Actions/userActions';
+import Cookies from 'universal-cookie';
+
 
 const initialState = {
     fields: {
@@ -26,6 +28,11 @@ class Pickup extends React.Component {
         console.log("submit pleas");
         const {  name, telephone } = this.state.fields;
         if (name === '' || telephone === '') { return false; }
+        else {
+            const cookies = new Cookies();
+            cookies.set('user', {name, telephone});
+            console.log('user info from pickup: ', cookies.get('user'));
+        }
         // TODO: add information to database
 
         getUserInfo(telephone);

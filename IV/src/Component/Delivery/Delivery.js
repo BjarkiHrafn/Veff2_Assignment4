@@ -31,7 +31,7 @@ class Delivery extends React.Component {
         else{
             const cookies = new Cookies();
             cookies.set('user', {name, address, city, telephone, postalCode});
-            console.log('user info: ', cookies.get('user'));
+            console.log('user info from delivery: ', cookies.get('user'));
         }
         // TODO: add information to database
         const { getUserInfo } = this.props;

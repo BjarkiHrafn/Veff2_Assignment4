@@ -2,6 +2,7 @@ import React from 'react';
 import TextInput from '../TextInput/TextInput';
 import { connect } from 'react-redux';
 import Overview from '../Overview/Overview';
+import { getUserInfo } from '../../Actions/userActions';
 
 const initialState = {
     fields: {
@@ -26,6 +27,9 @@ class Pickup extends React.Component {
         const {  name, telephone } = this.state.fields;
         if (name === '' || telephone === '') { return false; }
         // TODO: add information to database
+
+        getUserInfo(telephone);
+
         this.props.history.push('/checkout/overview');
     }
     render() {
@@ -52,4 +56,7 @@ class Pickup extends React.Component {
     };
 };
 
-export default Pickup;
+const mapStateToProps = ({user})  => {
+    return { user }
+}
+export default connect(mapStateToProps, { getUserInfo })(Pickup);
